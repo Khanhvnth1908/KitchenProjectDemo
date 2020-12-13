@@ -28,9 +28,9 @@ function next() {
 }
 
 
-// setInterval(() => {
-//     next();
-//   }, 5000);
+setInterval(() => {
+    next();
+  }, 5000);
 
 nextBtn.addEventListener('click',()=>{
     if(counter < slideImage.length - 1){
@@ -81,11 +81,24 @@ nextPro.addEventListener('click',()=>{
 
 prePro.addEventListener('click',()=>{
     if(index == 0){
-      index = slideImage.length - 1;
+      index = slideImage.length - 1;  
     }
     else{
       index --;
     }
     productList.style.transition = "transform 0.4s ease-in-out";
     productList.style.transform = 'translateX('+ (-imgProduct * index) + 'px)';
+});
+
+
+//
+
+const navLinks = document.querySelectorAll('.link');
+
+navLinks.forEach((link) => {
+  link.addEventListener("click",()=>{
+
+    navLinks.forEach(link => link.classList.remove("active"));
+    link.classList.add('active');
+  })
 });
