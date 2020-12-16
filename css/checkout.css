@@ -4,10 +4,16 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+.checkout {
+  width: 100%;
+  height: auto;
+}
 
 .checkout-container {
   width: 70%;
   margin: 0 auto;
+  padding: 30px;
+  background-color: white;
 }
 
 .table-cart {
@@ -19,7 +25,7 @@
   border-radius: 5px;
 }
 .table-cart > thead {
-    border: 1px solid #dee2e6;
+  border: 1px solid #dee2e6;
 }
 .table-cart > thead > tr {
   width: 100%;
@@ -32,75 +38,74 @@
 .table-cart > thead > tr > td {
   width: 20%;
 }
-tbody::before{
-    line-height: 1em;
-    content: ".";
-    color: #fff;
-    display: block;
-    width: 100%;
-    position: relative;
-    left: -1px;
-    z-index: 1;
-    background: #fff;
+tbody::before {
+  line-height: 1em;
+  content: ".";
+  color: #fff;
+  display: block;
+  width: 100%;
+  position: relative;
+  left: -1px;
+  z-index: 1;
 }
 
 .table-cart > tbody > tr > td {
-    padding: 10px;
+  padding: 10px;
 }
-.table-cart > tbody > tr > td >a{
-    text-decoration: none;
-    color: rgb(56, 53, 53);
+.table-cart > tbody > tr > td > a {
+  text-decoration: none;
+  color: rgb(56, 53, 53);
 }
-.table-cart > tbody > tr > td >a:hover{
-    color: rgb(197, 84, 84);
-    text-decoration: underline;
+.table-cart > tbody > tr > td > a:hover {
+  color: rgb(197, 84, 84);
+  text-decoration: underline;
 }
-.table-cart > tbody > tr > td.cart-img{
-}
-
-.table-cart > tbody > tr > td.cart-img > img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+.table-cart > tbody > tr > td.cart-img {
 }
 
-tbody > tr{
-    border: 1px solid #ccc;
+.table-cart > tbody > tr > td.cart-img > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
-.cart-des > a{
-  font-size:17px;
+tbody > tr {
+  border: 1px solid #ccc;
 }
 
-.cart-price,.cart-method{
-    font-weight: bold;
-    font-size: 20px;
+.cart-des > a {
+  font-size: 17px;
+}
+
+.cart-price,
+.cart-method {
+  font-weight: bold;
+  font-size: 20px;
 }
 .cart-counter {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.cart-counter > input{
-    width: 30%;
-    text-align: center;
-    color: rgb(82, 75, 75);
+.cart-counter > input {
+  width: 30%;
+  text-align: center;
+  color: rgb(82, 75, 75);
 }
-.cart-counter > button{
-    width: 30px;
-    border: none;
-    background: none;
-    border-radius: 3px;
-    border: 1px solid #d0d0d0;
-    outline: none;
+.cart-counter > button {
+  width: 30px;
+  border: none;
+  background: none;
+  border-radius: 3px;
+  border: 1px solid #d0d0d0;
+  outline: none;
 }
-
 .cart-total{
-  margin-bottom: 8rem;
+  margin-bottom: 30px;
 }
-.cart-total .total-price{
+.cart-total .total-price {
   display: flex;
   justify-content: flex-end;
   font-size: 24px;
@@ -108,21 +113,179 @@ tbody > tr{
   margin-bottom: 20px;
 }
 
-.cart-total .clearfix{
+.cart-total .clearfix {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.cart-total .clearfix > a{
+.cart-total .clearfix > p {
   text-decoration: none;
   margin-left: 20px;
   color: #dee2e6;
   background: #605555;
   padding: 15px 25px;
   border-radius: 20px;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 0;
 }
-.cart-total .clearfix > a:hover{
-  background: rgb(156, 64, 64);
+.cart-total .clearfix > a {
+  text-decoration: none;
+  margin-left: 20px;
+  color: #dee2e6;
+  background: #605555;
+  padding: 15px 25px;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.cart-total .clearfix > a:hover {
+  background: rgb(5, 4, 4);
+}
+
+/* PayMent */
+.payment {
+  width: 100%;
+  position: absolute;
+  height: 722px;
+  top: 0;
+  z-index: 999;
+  display: none;
+}
+
+.payment__background {
+  width: 100%;
+  height: 100%;
+  background: #0000004f;
+}
+.payment__header > p{
+  opacity: 0.6;
+}
+.payment__content {
+  background-color: white;
+  width: 70%;
+  margin: auto;
+  height: 36rem;
+  position: relative;
+  top: 11%;
+  padding: 30px;
+  overflow: auto;
+}
+.payment__product {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.payment__product > thead {
+  border: 1px solid #ccc;
+}
+.payment__product > thead > tr > th {
+  padding: 10px;
+  background-color: rgb(211, 211, 211);
+}
+
+.method__title > p {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+.payment__method table {
+  width: 100%;
+}
+.payment__method table > tbody > tr {
+  display: flex;
+}
+.payment__method table > tbody > tr > td {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.payment__method table > tbody > tr > td > label {
+  padding-left: 20px;
+}
+.payment__method table > tbody > tr > td > label > a {
+  color: brown;
+  font-size: 32px;
+}
+
+.payment__totalPrice {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.payment__totalPrice > p{
+  font-size: 18px;
+  font-weight: bold;
+}
+.payment__totalPrice > p > span{
+  color: brown;
+}
+.infor-buyer > label {
+  margin: 14px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.infor-buyer .buyer-name {
+  margin-bottom: 10px;
+}
+
+.infor-buyer .buyer-name > input {
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.buyer-email {
+  margin-bottom: 15px;
+}
+
+.buyer-email > input {
+  padding: 5px 10px;
+  width: 34%;
+}
+.buyer-number > input {
+  padding: 5px 10px;
+}
+.shipping-address {
+  margin-bottom: 30px;
+}
+.shipping-address > input {
+  width: 100%;
+  padding: 5px 10px;
+}
+.submit-payment {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.submit-payment > button {
+  width: 15%;
+  padding: 10px;
+  border: none;
+  background: brown;
+  color: rgb(252, 252, 252);
+  border-radius: 20px;
+  outline: none;
+}
+.submit-payment > button:hover {
+  background: rgb(148, 28, 28);
+}
+
+input:focus {
+  background-color: rgb(241, 237, 237);
+}
+
+.close-popup{
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.popup-active{
+  display: block;
 }

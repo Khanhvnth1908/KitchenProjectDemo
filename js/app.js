@@ -1,15 +1,15 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+const countArr = [1,2,3];
+const countFre = [1,2];
 
-
-//Slider(Banner)
+//-------------------------------------------Slider(Banner)
 
 const IMG_WIDTH = window.innerWidth;
 const slideContainer = $(".slides");
 const slideImage = [...$$(".slide")];
 
-//Button
 const nextBtn = $("#next");
 const preBtn = $("#pre");
 
@@ -55,7 +55,7 @@ preBtn.addEventListener('click',()=>{
 
 
 
-//Product Demo
+//------------------------------------Product Demo
 
 const productList = $('.product-list');
 const prouductItem = [...$$('.product')];
@@ -67,28 +67,69 @@ const imgProduct = 270;
 
 productList.style.width = prouductItem.length * imgProduct + "px";
 
-let index = 0;
+let count = 0;
 
 nextPro.addEventListener('click',()=>{
-    if(index < slideImage.length - 1){
+    if(count < countArr.length - 1){
+      count++;
+    }else{
+      count=0;
+    }
+    productList.style.transition = "transform 0.4s ease-in-out";
+    productList.style.transform = 'translateX('+ (- imgProduct * count) + 'px)';
+});
+
+prePro.addEventListener('click',()=>{
+    if(count == 0){
+      count = countArr.length - 1;
+    }
+    else{
+      count --;
+    }
+    productList.style.transition = "transform 0.4s ease-in-out";
+    productList.style.transform = 'translateX('+ (-imgProduct * count) + 'px)';
+});
+
+
+
+
+
+//-----------------------------------------------Product Feature
+
+
+
+const featureList = $('.feature-list');
+
+const nextFea = $('#nextFea');
+const preFea = $('#preFea');
+
+
+featureList.style.width = prouductItem.length * imgProduct + "px";
+
+let index = 0;
+
+nextFea.addEventListener('click',()=>{
+    if(index < countFre.length - 1){
       index++;
     }else{
       index=0;
     }
-    productList.style.transition = "transform 0.4s ease-in-out";
-    productList.style.transform = 'translateX('+ (- imgProduct * index) + 'px)';
+    featureList.style.transition = "transform 0.4s ease-in-out";
+    featureList.style.transform = 'translateX('+ (- imgProduct * index) + 'px)';
 });
 
-prePro.addEventListener('click',()=>{
+preFea.addEventListener('click',()=>{
     if(index == 0){
-      index = slideImage.length - 1;  
+      index = countFre.length - 1;
     }
     else{
       index --;
     }
-    productList.style.transition = "transform 0.4s ease-in-out";
-    productList.style.transform = 'translateX('+ (-imgProduct * index) + 'px)';
+    featureList.style.transition = "transform 0.4s ease-in-out";
+    featureList.style.transform = 'translateX('+ (-imgProduct * index) + 'px)';
 });
+
+
 
 
 //
