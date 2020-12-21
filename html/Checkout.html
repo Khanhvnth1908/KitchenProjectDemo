@@ -28,6 +28,15 @@
   </head>
   <body>
     <section>
+      <ul class="menu">
+        <li><a href="#" class="active-menu">All</a></li>
+        <li><a href="#">Kitchen Tool</a></li>
+        <li><a href="#">Fridge</a></li>
+        <li><a href="#">Kitchen Cleaning</a></li>
+        <li><a href="#">Food presevation</a></li>
+      </ul>
+    </section>
+    <section>
       <div class="checkout">
         <div class="checkout-container">
           <div class="checkout-content">
@@ -174,9 +183,7 @@
             </table>
           </div>
           <div class="payment__totalPrice">
-            <p>Total Price: <span>
-              $100
-            </span></p>
+            <p>Total Price: <span> $100 </span></p>
           </div>
           <form class="payment__method">
             <div class="method__title">
@@ -186,19 +193,14 @@
               <tbody>
                 <tr style="border: none">
                   <td>
-                    <input type="radio" name="payment" id="" />
-                    <label>
-                      <a href=""><i class="fab fa-cc-visa"></i></a>
-                      <a href=""><i class="fab fa-cc-mastercard"></i></a>
-                      <a href=""><i class="fab fa-cc-discover"></i></a>
-                      <a href=""><i class="fab fa-cc-diners-club"></i></a>
-                    </label>
-                  </td>
-                  <td>
-                    <input type="radio" name="payment" id="" />
+                    <input type="radio" name="payment_method" value="1" />
                     <label>
                       <a href=""><i class="fab fa-cc-paypal"></i></a>
                     </label>
+                  </td>
+                  <td>
+                    <input type="radio" name="payment_method" value="2" />
+                    <label> Payment on delivery </label>
                   </td>
                 </tr>
               </tbody>

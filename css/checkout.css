@@ -202,6 +202,16 @@ tbody > tr {
   display: flex;
   align-items: center;
 }
+.payment__method table > tbody > tr > td > input{
+  cursor: pointer;
+}
+.payment__method table > tbody > tr > td > label{
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .payment__method table > tbody > tr > td > label {
   padding-left: 20px;
@@ -288,4 +298,33 @@ input:focus {
 
 .popup-active{
   display: block;
+}
+
+.menu{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: crimson;
+  list-style: none;
+  height: 4rem;
+}
+
+.menu > li > a{
+  color: #251e1e;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.menu > li > a.active-menu{
+  font-size: 19px;
+}
+.menu::after{
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: aqua;
 }
